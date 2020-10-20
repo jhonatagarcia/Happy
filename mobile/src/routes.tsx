@@ -8,6 +8,7 @@ import OrfanatosMap from './pages/OrfanatosMap'
 import SelectMapPosition from './pages/CreateOrfanato/SelectMapPosition';
 import OrfanatoData from './pages/CreateOrfanato/OrfanatoData'
 import Header from './components/Header';
+import OrfanatoDetalhes from './pages/OrfanatoDetalhes';
 
 const {Navigator, Screen} = createStackNavigator();
 
