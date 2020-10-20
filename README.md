@@ -1,13 +1,12 @@
-<h1 align="center">
-    <img alt="Happy" title="Happy" src=".github/logo.svg" />
+<h1 color="#29B6D1" align="center">Happy
+<img src=".github/logo.svg" />
 </h1>
-
 <p align="center">
-  <img alt="Happy" src=".github/mobile.gif" width="100%">
+  <img alt="Happy" width="20%" height="20%" src=".github/mobile.gif" width="100%">
 </p>
 
 <p align="center">
-  <img alt="Happy" src=".github/web.gif" width="30%">
+  <img alt="Happy" width="100%" height="100%" src=".github/web.gif" width="30%">
 </p>
 
 ## 🚀 Tecnologias
