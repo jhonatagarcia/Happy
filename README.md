@@ -1,6 +1,4 @@
-<h1 align="center">
-    <img alt="Happy" title="Happy"
-</h1>
+<h1 align="center">Happy</h1>
 
 <p align="center">
   <img alt="Happy" width="20%" height="20%" src=".github/mobile.gif" width="100%">
