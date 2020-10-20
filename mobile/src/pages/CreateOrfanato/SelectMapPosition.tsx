@@ -16,15 +16,15 @@ export default function SelectMapPosition() {
   }
 
   function handleNextStep() {
-    navigation.navigate('OrphanageData', { position });
+    navigation.navigate('OrfanatoData', { position });
   }
 
   return (
     <View style={styles.container}>
       <MapView 
         initialRegion={{
-          latitude: -27.2092052,
-          longitude: -49.6401092,
+          latitude: -23.5279279,
+          longitude: -46.8436877,
           latitudeDelta: 0.008,
           longitudeDelta: 0.008,
         }}

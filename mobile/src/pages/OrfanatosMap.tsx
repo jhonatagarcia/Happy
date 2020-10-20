@@ -1,20 +1,34 @@
-import React from 'react';
-
+import React, {useState } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import { Feather } from '@expo/vector-icons'
 
 import mapMarker from '../images/map-marker.png'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import api from '../services/api';
+
+interface Orfanato {
+    id: number,
+    name: string,
+    latitude: number,
+    longitude: number
+}
 
 export default function OrfanatosMap() {
+    const [orfanatos, setOrfanatos] = useState<Orfanato[]>([]);
     const navigation = useNavigation();
 
-    function handleNavigationOrfanatoDetalhes(){
-        navigation.navigate('OrfanatoDetalhes');
+    useFocusEffect(() => {
+        api.get('orfanatos').then(response => {
+            setOrfanatos(response.data)
+        });
+    }, []);
+
+    function handleNavigationOrfanatoDetalhes(id: number) {
+        navigation.navigate('OrfanatoDetalhes', {id});
     }
 
-    function handleNavigationCreateOrfanato(){
+    function handleNavigationCreateOrfanato() {
         navigation.navigate('SelectMapPosition');
     }
 
@@ -30,28 +44,34 @@ export default function OrfanatosMap() {
                     longitudeDelta: 0.008,
                 }}
             >
-                <Marker
-                    icon={mapMarker}
-                    calloutAnchor={{
-                        x: 2.1,
-                        y: 0.8,
-                    }}
-                    coordinate={{
-                        latitude: -23.5026878,
-                        longitude: -46.778004,
-                    }}
-                >
+                {orfanatos.map(orfanato => {
+                    return (
+                        <Marker
+                            key={orfanato.id}
+                            icon={mapMarker}
+                            calloutAnchor={{
+                                x: 2.1,
+                                y: 0.8,
+                            }}
+                            coordinate={{
+                                latitude: orfanato.latitude,
+                                longitude: orfanato.longitude
+                            }}
+                        >
 
-                    <Callout tooltip onPress={handleNavigationOrfanatoDetalhes}>
-                        <View style={styles.calloutContainer}>
-                            <Text style={styles.calloutText}>Amamos</Text>
-                        </View>
-                    </Callout>
-                </Marker>
+                            <Callout tooltip onPress={() => handleNavigationOrfanatoDetalhes(orfanato.id)}>
+                                <View style={styles.calloutContainer}>
+                                    <Text style={styles.calloutText}>{orfanato.name}</Text>
+                                </View>
+                            </Callout>
+                        </Marker>
+                    )
+                })}
+
             </MapView>
 
             <View style={styles.footer}>
-                <Text style={styles.footerText}>2 Texto</Text>
+            <Text style={styles.footerText}>{orfanatos.length} Orfanato(s) encontrados</Text>
 
                 <TouchableOpacity style={styles.createOrfanatoButton} onPress={handleNavigationCreateOrfanato}>
                     <Feather name="plus" size={20} color="#FFF" />
