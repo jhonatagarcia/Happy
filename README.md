@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img alt="Happy" width="50%" height="50%" src=".github/web.gif" width="30%">
+  <img alt="Happy" width="100%" height="100%" src=".github/web.gif" width="30%">
 </p>
 
 ## 🚀 Tecnologias
