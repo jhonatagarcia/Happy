@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img alt="Happy" width="25%" height="20%" src=".github/mobile.gif" width="100%">
+  <img alt="Happy" width="20%" height="20%" src=".github/mobile.gif" width="100%">
 </p>
 
 <p align="center">
