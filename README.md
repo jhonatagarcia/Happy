@@ -1,4 +1,4 @@
-<h1 color="#29B6D1" align="center">
+<h1 align="center">
 <img alt="Happy" title="Happy"  width="3%" height="3%" src=".github/logo.png" />
 </h1>
 <p align="center">
