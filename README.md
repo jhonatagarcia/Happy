@@ -1,10 +1,8 @@
 <h1 align="center">
     <img alt="Happy" title="Happy" src=".github/happy.svg" />
+    <img width="3%" height="3%" src=".github/logo.png" />
 </h1>
 
-<h1 align="center">
-<img alt="Happy" title="Happy"  width="3%" height="3%" src=".github/logo.png" />
-</h1>
 <p align="center">
   <img alt="Happy" width="20%" height="20%" src=".github/mobile.gif" width="100%">
 </p>
