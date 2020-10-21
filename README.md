@@ -1,6 +1,6 @@
 <h1 align="center">
     <img alt="Happy" title="Happy" src=".github/happy.svg" />
-    <img width="3%" height="3%" src=".github/logo.png" />
+    <img width="4%" height="4%" src=".github/logo.png" />
 </h1>
 
 <p align="center">
